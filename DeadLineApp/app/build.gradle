@@ -1,0 +1,27 @@
+
+apply plugin: 'java'
+apply plugin: 'jacoco'
+apply plugin: 'application'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+ 
+    test Implementation 'junit:4.13'
+    // https://mvnrepository.com/artifact/mysql/mysql-connector-java
+
+    implementation group: 'mysql', name: 'mysql-connector-java', version: '5.1.13'
+
+}
+
+application {
+    // Define the main class for the application.
+    mainClass = 'DeadLineApp.App'
+}
+
+tasks.named('test') {
+    // Use JUnit Platform for unit tests.
+    useJUnitPlatform()
+}
